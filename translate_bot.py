@@ -33,7 +33,7 @@ async def translate(update: Update, context: ContextTypes.DEFAULT_TYPE):
     translated = translator.translate(original, dest=target_lang)
     await update.message.reply_text(f"🔁 Переклад ({translated.src} → {target_lang}):\n{translated.text}")
 
-app = ApplicationBuilder().token(os.environ["BOT_TOKEN"]).build()
+app = ApplicationBuilder().token(os.environ["TELEGRAM_TOKEN"]).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("setlang", setlang))
 app.add_handler(CommandHandler("translate", translate))
