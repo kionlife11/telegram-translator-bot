@@ -1,0 +1,7 @@
+services:
+  - type: web
+    env: python
+    pythonVersion: "3.11"
+    name: telegram-translate-bot
+    buildCommand: pip install -r requirements.txt
+    startCommand: python translate_bot.py
